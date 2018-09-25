@@ -1,12 +1,8 @@
 # UniversalFinanceManager
 
-Team UFM Spring 2017
-Contributors:
-* Muhammad Ansari
-* Sean Hansen
-* Areeba Waheed
-* Simranjeet Kaur
-* Aaron O'Connor
-* Daniel Karapetian
-
+Universal Financial Manager (UFM) is a self-contained application
+designed for Android mobile users.  It is a standalone product
+offered designed to assist user in expenditure management. 
+UFM is designed to have a simple UI to edit, manage ,and monitor
+budgeting related activities.
 ------------------------------------
