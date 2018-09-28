@@ -1,0 +1,7 @@
+I am trying to get familiar with Github since I've never actually worked with it myself.
+This project is a finance managing app that helps users keep track of all their account balances and net worth across all accounts.
+UFM unifies all income and outcome of money in order to help manage personal finance and create saving strategies.
+There is some unfamiliarity with advanced version control operations and I am currently working on that.
+Since this is an Android Application and its built in Java, I feel that the easiest and most pleasant way to get started with unit testing would be JUnit. 
+
+ 
