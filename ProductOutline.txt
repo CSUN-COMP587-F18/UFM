@@ -1,0 +1,9 @@
+-Android Application
+-Personal Finance Management
+	1. Record Transactions
+	2. Monitor account balances
+	3. Monitor spending in various categories
+	4. Track net worth across all accounts
+	5. Create Budgets based on categories to restrict spending
+	6. Create reminders for important bills
+-Device-Independent: Login on any android device and have access to all your financial data.
