@@ -1,0 +1,5 @@
+For this pull request, I made a new Java File in the Project files.
+I added two unit test methods.
+Test #1 passes
+Test #2 fails 
+This is to check that I understand unit testing to some extent.

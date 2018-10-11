@@ -1,0 +1,10 @@
+Some development information about the program:
+Languages: Java and XML for GUI
+Unit Testing: JUnit, Mockito, Espresso
+Testing Environment: Android Virtual Machine (Nexus 5x)
+SLOC: ~11,000
+Build/Configuration: Gradle
+Major Libraries:Dagger, MPAndroidChart
+Source Control/Hosting: Git/Github
+			https://github.com/Seantonomous/UniversalFinanceManager
+
