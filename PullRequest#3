@@ -1,0 +1,25 @@
+Pull Request #3
+
+
+Output of the Test Case:
+
+
+Testing started at 7:38 PM ...
+
+10/10 19:38:22: Launching AppContextTest
+$ adb push C:\Users\Areeba.PC\Desktop\UFM\app\build\outputs\apk\debug\app-debug.apk /data/local/tmp/ufm.universalfinancemanager
+$ adb shell pm install -t -r "/data/local/tmp/ufm.universalfinancemanager"
+Success
+
+
+$ adb push C:\Users\Areeba.PC\Desktop\UFM\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk /data/local/tmp/ufm.universalfinancemanager.test
+$ adb shell pm install -t -r "/data/local/tmp/ufm.universalfinancemanager.test"
+Success
+
+
+Running tests
+
+$ adb shell am instrument -w -r   -e debug false -e class ufm.universalfinancemanager.AppContextTest ufm.universalfinancemanager.test/android.support.test.runner.AndroidJUnitRunner
+Client not ready yet..
+Started running tests
+Tests ran to completion.
