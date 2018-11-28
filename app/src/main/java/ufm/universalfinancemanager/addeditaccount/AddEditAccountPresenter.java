@@ -26,7 +26,7 @@ public class AddEditAccountPresenter implements AddEditAccountContract.Presenter
     private AddEditAccountContract.View mAddEditAccountView = null;
 
     @Inject
-    AddEditAccountPresenter(User user, UserRepository userRepository, @Nullable String accountName) {
+    public AddEditAccountPresenter(User user, UserRepository userRepository, @Nullable String accountName) {
         mUser = user;
         mUserRepository = userRepository;
         mAccountName = accountName;
