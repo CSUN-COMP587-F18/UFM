@@ -23,9 +23,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by Areeba on 11/28/2018.
- */
 
 public class TestingAccounts {
 
@@ -67,22 +64,5 @@ public class TestingAccounts {
     }
 }
 
-    /*private User mUser;
 
-    @Mock
-    private UserRepository mTransactionRepository;
 
-    private AddEditAccountPresenter mPresenter;
-
-    private String name = "CHASE";
-    private Account account;
-
-    @Test
-    public void testSavingandDeletingAccount() {
-        mUser = Mockito.mock(User.class);
-        Mockito.doThrow(NullPointerException.class).when(mUser);
-        mPresenter = new AddEditAccountPresenter(mUser, mTransactionRepository, null);
-        mPresenter.saveAccount(name, 500, AccountType.CHECKING);
-        assertEquals(mUser.getAccount(name), name);
-
-    }*/
