@@ -1,48 +1,68 @@
 package ufm.universalfinancemanager.unit_tests;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
+import ufm.universalfinancemanager.addeditaccount.AddEditAccountContract;
 import ufm.universalfinancemanager.addeditaccount.AddEditAccountPresenter;
-import ufm.universalfinancemanager.db.UserDataSource;
+import ufm.universalfinancemanager.addeditcategory.AddEditCategoryPresenter;
+import ufm.universalfinancemanager.addedittransaction.AddEditTransactionContract;
 import ufm.universalfinancemanager.db.UserRepository;
 import ufm.universalfinancemanager.db.entity.Account;
-import ufm.universalfinancemanager.db.entity.Transaction;
+import ufm.universalfinancemanager.networth.NetworthContract;
+import ufm.universalfinancemanager.networth.NetworthPresenter;
 import ufm.universalfinancemanager.support.AccountType;
+import ufm.universalfinancemanager.support.Flow;
+import ufm.universalfinancemanager.support.Networth;
 import ufm.universalfinancemanager.support.atomic.User;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
-/**
- * Created by Areeba on 11/22/2018.
- */
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 
 public class TestingAccounts {
 
     @Mock
-    private User mUser;
+    private UserRepository mTransactionRepository;
 
     @Mock
-    private UserRepository mRepository;
+    User mUser;
 
-    private AddEditAccountPresenter mPresenter;
+    @Mock
+    private AddEditAccountContract.View view;
 
-    private String name = "BOFA";
-    private double balance = 500.00;
-    private AccountType accountType = AccountType.CHECKING;
+    @Mock
+    private NetworthContract.View view2;
+
+    AddEditAccountPresenter presenter;
+    NetworthPresenter presenterNetworth;
+
+    private String name = "CHASE";
 
     @Test
-    public void testSavingandDeletingAccount() {
-        mPresenter = new AddEditAccountPresenter(mUser, mRepository, null);
-        mPresenter.saveAccount(name, balance, accountType);
-
-        Account acc = mUser.getAccount(name);
-        assertEquals(acc.getName(), name);
-        assertEquals(acc.getBalance(), balance);
-        assertEquals(acc.getType(), accountType);
-
-        //deletes the account and all the transactions linked to it
-        mPresenter.deleteAccount();
+    public void testExistedAccountView() {
+        mUser = Mockito.mock(User.class);
+        presenter = new AddEditAccountPresenter(mUser, mTransactionRepository, null);
+        view = Mockito.mock(AddEditAccountContract.View.class);
+        presenter.takeView(view);
+        presenter.saveAccount(name, 500, AccountType.CHECKING);
+        verify(view).showMessage("Account successfully saved.");
 
     }
+
+    @Test
+    public void testNetworthTotal_ifNewAccountIsAdded() {
+        mUser = Mockito.mock(User.class);
+       presenterNetworth = new NetworthPresenter(mUser);
+       view2 = Mockito.mock(NetworthContract.View.class);
+       presenterNetworth.takeView(view2);
+       verify(view2).showNetworth(mUser.getAccounts());
+    }
 }
+
+
+
